@@ -78,12 +78,15 @@ fn2();
  */
 
 {
-    num = 0;
+    let num = 0;
     function increment() {
+    // 関数なので外から呼び出せる
         num = num + 1;
         console.log(num);
     }
 }
+
+// num; 外から呼び出せない
 
 increment();
 increment();
