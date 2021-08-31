@@ -1,7 +1,5 @@
-
-
 function incrementFactory() {
-  let num = 0;
+  let num = 0; //プライベート変数
 
   function incrementA() {
     num = num + 1;
