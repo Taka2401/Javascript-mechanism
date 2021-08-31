@@ -11,11 +11,15 @@ function incrementFactory() {
   return incrementA;
 };
 
+// console.log(num);
+// 外部から呼び出せない
+
 const incrementB = incrementFactory();
 
 incrementB();
 incrementB();
 incrementB();
 incrementB();
+
 
 
