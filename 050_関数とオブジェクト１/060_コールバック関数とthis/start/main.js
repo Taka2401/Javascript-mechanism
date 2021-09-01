@@ -7,3 +7,10 @@ const person = {
     }
 }
 person.hello();
+
+// 関数をrefに渡している
+function fn(ref) {
+    ref();
+}
+
+fn(person.hello);
