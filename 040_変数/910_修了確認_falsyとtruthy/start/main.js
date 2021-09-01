@@ -2,28 +2,60 @@
  * 問題１：
  * 以下のコンソールにはどのような値が表示されるでしょうか？
  */
-// console.log("0 == false", 0 == false);
-// console.log("0 === false", 0 === false);
-// console.log('"false" == false', "false" == false);
-// console.log('"0" == 0', "0" == 0);
-// console.log('Boolean("0") === false', Boolean("0") === false);
-// console.log('Boolean(0) === false', Boolean(0) === false);
-// console.log('!Boolean(0) === false', !Boolean(0) === false);
-// console.log('-1 == false', -1 == false);
-// console.log('!10 === false', !10 === false);
+// console.log("0 == false", 0 == false); //true, true
+// // 答え 0 == false, true
+
+// console.log("0 === false", 0 === false); //true, true
+// // 答え 0 === false, false(number, string)
+
+// console.log('"false" == false', "false" == false); //true, true
+// // 答え "false" == false, false(文字列はtrue)
+
+// console.log('"0" == 0', "0" == 0); //true, true
+// // 答え"0" == 0, true
+
+// console.log('Boolean("0") === false', Boolean("0") === false); //Boolean("0") === false, true
+// // 答え Boolean("0") === false, false
+
+// console.log('Boolean(0) === false', Boolean(0) === false); //Boolean(0) === false, true
+// // 答え Boolean(0) === false, true
+
+// console.log('!Boolean(0) === false', !Boolean(0) === false); //!Boolean(0) === false, true
+// // 答え !Boolean(0) === false, false
+
+// console.log('-1 == false', -1 == false); //false, false
+// // 答え -1 == false, false
+
+// console.log('!10 === false', !10 === false); //!10 === false, false
+// // 答え !10 === false, true
 
 /**
  * 問題２：
  * 関数fnの引数numが渡ってこない場合（undefinedまたはnullの場合）のみ、
  * 初期値として-1を設定したいものとします。
- * 
+ *
  * 以下の関数fnの初期化を適切に書き直してください。
  * ※aには0以上の整数値が渡ってくるものとします。
  */
-let a = 1;
+// 自分の答え
 
-function fn(num) {
-    num = num || -1;
+// nullの場合は初期化が行われない
+// let a = null;
+
+// function fn(num = -1) {
+//     // num = num || -1;
+//     console.log(num);
+// }
+// fn(a);
+
+// 答え
+// let a; undefined
+let a = null;
+
+function fn(num = -1) {
+    if(num === undefined || num === null) {
+        num = -1;
+    }
     console.log(num);
 }
 fn(a);
@@ -39,3 +71,25 @@ fn(a);
  * greeting("Bob"); -> 出力結果："hello, Bob"
  *
  */
+
+// 自分の答え
+function greeting(name, greet) {
+    if(name && greet) {
+    console.log(`${greet}, ${name}`);
+    } else {
+    console.log(`hello, ${name}`);
+    }
+};
+
+greeting("Bob", "hi");
+greeting("Bob");
+
+// 答え
+// function greeting(name, hi) {
+//     hi = hi || 'hello';
+//     console.log(`${hi}, ${name}`);
+// }
+
+// ""だとfalsyになりhelloが代入される
+// greeting("Bob", "");
+// greeting("Bob");
