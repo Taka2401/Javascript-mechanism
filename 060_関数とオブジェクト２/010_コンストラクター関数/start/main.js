@@ -1,6 +1,5 @@
 // コンストラクター関数
 // 新しくオブジェクトを作成するための雛形となる関数
-
 function Person(name, age) {
   this.name = name;
   this.age = age;
