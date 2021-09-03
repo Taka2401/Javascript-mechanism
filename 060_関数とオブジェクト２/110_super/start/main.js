@@ -16,6 +16,7 @@ class Japanese extends Person {
     }
 
     hello() {
+        // superはクラスの中で使用されるもの
         super.hello();
         console.log('Konnichiwa ' + this.name);
     }
@@ -25,9 +26,14 @@ class Japanese extends Person {
     }
 }
 
+// クラスの外なのでエラーになる
+// bob.bye = function() {
+//     super.hello();
+// }
+
 const taro = new Japanese('Taro', 23, 'Male');
 console.log(taro);
-taro.bye();
+taro.hello();
 
 // const american = {
 //     hello() {
