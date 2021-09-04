@@ -16,8 +16,25 @@ class Person {
 
   hello() {
       console.log('hello ' + this.name);
+      // return this.hello;
   }
 }
 
 const bob = new Person('Bob', 23);
-setTimeout(bob.hello, 1000);
+
+// 自分の答え
+// 1 setTimeoutには関数を渡す
+setTimeout(bob.hello(), 3000);
+
+// 2
+// const greeting = setTimeout(bob.hello(), 1000);
+// bob.hello();
+
+
+// 答え
+
+setTimeout(Person.prototype.hello.bind(bob), 1000);
+
+setTimeout(function() {
+  bob.hello();
+} , 1000);
